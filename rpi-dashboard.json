@@ -17,7 +17,7 @@
   "editable": true,
   "gnetId": 11074,
   "graphTooltip": 0,
-  "iteration": 1585048219288,
+  "iteration": 1585049614130,
   "links": [
     {
       "asDropdown": false,
@@ -340,107 +340,63 @@
       "type": "bargauge"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Prometheus",
       "description": "",
       "fieldConfig": {
-        "defaults": {},
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
         "overrides": []
       },
-      "fill": 0,
-      "fillGradient": 1,
       "gridPos": {
         "h": 6,
         "w": 8,
         "x": 16,
         "y": 0
       },
-      "hiddenSeries": false,
       "id": 169,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "hideEmpty": true,
-        "hideZero": true,
-        "max": true,
-        "min": false,
-        "rightSide": false,
-        "show": true,
-        "sideWidth": null,
-        "sort": "current",
-        "sortDesc": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 2,
       "links": [],
-      "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "colorMode": "value",
+        "fieldOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto"
       },
-      "percentage": false,
-      "pointradius": 0.5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      "pluginVersion": "7.0.0-de330cbapre",
       "targets": [
         {
           "expr": "cpu_temperature{instance=~'$node'}/1000",
           "format": "time_series",
+          "instant": false,
           "interval": "",
-          "intervalFactor": 5,
+          "intervalFactor": 1,
           "legendFormat": "{{instance}}_{{chip}}_{{sensor}}",
           "refId": "A"
         }
       ],
-      "thresholds": [],
       "timeFrom": null,
-      "timeRegions": [],
       "timeShift": null,
       "title": "Hardware Temperature(VM may not display the metrics)",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "celsius",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
+      "type": "stat"
     },
     {
       "cacheTimeout": null,
@@ -2227,6 +2183,7 @@
       {
         "allValue": null,
         "current": {
+          "selected": true,
           "text": "node-exporter",
           "value": "node-exporter"
         },
@@ -2310,8 +2267,8 @@
       {
         "allValue": null,
         "current": {
-          "text": "/etc/hostname",
-          "value": "/etc/hostname"
+          "text": "/textfile",
+          "value": "/textfile"
         },
         "datasource": "Prometheus",
         "definition": "",
@@ -2338,7 +2295,7 @@
         "allValue": null,
         "current": {
           "isNone": true,
-          "selected": false,
+          "selected": true,
           "text": "None",
           "value": ""
         },
@@ -2396,7 +2353,7 @@
     ]
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {
