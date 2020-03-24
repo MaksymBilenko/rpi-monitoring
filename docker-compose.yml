@@ -4,6 +4,7 @@ services:
     restart: unless-stopped
     image: prom/node-exporter:latest
     container_name: node-exporter
+    hostname: raspberry-pi
     ports:
     - 9100:9100
     volumes:
@@ -27,12 +28,12 @@ services:
 
   rpi-thermal-exporter:
     restart: unless-stopped
-    image: ubuntu:latest
+    image: busybox:latest
     container_name: rpi-thermal-exporter
     volumes:
     - node-exporter-textfile:/textfile
     - /sys:/host/sys:ro
-    command: /bin/bash -c 'while [ 1 ]; do /bin/echo cpu_temperature `cat /host/sys/class/thermal/thermal_zone0/temp` > /textfile/thermal_zone0.prom; sleep 5; test $$? -gt 128 && break; done'
+    command: /bin/sh -c 'while [ 1 ]; do /bin/echo cpu_temperature `cat /host/sys/class/thermal/thermal_zone0/temp` > /textfile/thermal_zone0.prom; sleep 5; test $$? -gt 128 && break; done'
 
   grafana:
     restart: unless-stopped
