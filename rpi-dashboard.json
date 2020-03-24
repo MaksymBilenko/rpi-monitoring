@@ -17,7 +17,7 @@
   "editable": true,
   "gnetId": 11074,
   "graphTooltip": 0,
-  "iteration": 1585051297789,
+  "iteration": 1585051929432,
   "links": [
     {
       "asDropdown": false,
@@ -358,7 +358,8 @@
                 "value": 80
               }
             ]
-          }
+          },
+          "unit": "celsius"
         },
         "overrides": []
       },
@@ -2397,8 +2398,8 @@
         "allValue": null,
         "current": {
           "selected": true,
-          "text": "/etc/hosts",
-          "value": "/etc/hosts"
+          "text": "/etc/hostname",
+          "value": "/etc/hostname"
         },
         "datasource": "Prometheus",
         "definition": "",
@@ -2518,5 +2519,5 @@
   "variables": {
     "list": []
   },
-  "version": 2
+  "version": 3
 }
