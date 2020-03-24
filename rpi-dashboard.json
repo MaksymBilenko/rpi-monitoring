@@ -17,7 +17,7 @@
   "editable": true,
   "gnetId": 11074,
   "graphTooltip": 0,
-  "iteration": 1585054995520,
+  "iteration": 1585054995534,
   "links": [
     {
       "asDropdown": false,
@@ -2298,7 +2298,7 @@
           "refId": "B"
         }
       ],
-      "title": "Disk Space Used Basic(EXT4/XFS)",
+      "title": "Disk Space Used Basic(EXT4/XFS/fuseblk)",
       "transform": "table",
       "type": "table"
     }
