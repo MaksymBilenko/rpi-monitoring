@@ -17,7 +17,7 @@
   "editable": true,
   "gnetId": 11074,
   "graphTooltip": 0,
-  "iteration": 1585054995534,
+  "iteration": 1585123555047,
   "links": [
     {
       "asDropdown": false,
@@ -1053,16 +1053,18 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "1-(node_filesystem_free_bytes{instance=~'$node',fstype=~\"ext4|xfs\"} / node_filesystem_size_bytes{instance=~'$node',fstype=~\"ext4|xfs\"})",
+          "expr": "1-(node_filesystem_free_bytes{instance=~'$node',fstype=~\"ext4|xfs|fuseblk\"} / node_filesystem_size_bytes{instance=~'$node',fstype=~\"ext4|xfs|fuseblk\"})",
           "format": "time_series",
           "instant": false,
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "{{instance}}：{{mountpoint}}",
           "refId": "A"
         },
         {
-          "expr": "node_filesystem_files_free{instance=~'$node',fstype=~\"ext4|xfs\"} / node_filesystem_files{instance=~'$node',fstype=~\"ext4|xfs\"}",
+          "expr": "node_filesystem_files_free{instance=~'$node',fstype=~\"ext4|xfs|fuseblk\"} / node_filesystem_files{instance=~'$node',fstype=~\"ext4|xfs|fuseblk\"}",
           "hide": true,
+          "interval": "",
           "legendFormat": "Inodes：{{instance}}：{{mountpoint}}",
           "refId": "B"
         }
@@ -2343,9 +2345,9 @@
       {
         "allValue": null,
         "current": {
-          "text": "All",
+          "text": "raspberry-pi",
           "value": [
-            "$__all"
+            "raspberry-pi"
           ]
         },
         "datasource": "Prometheus",
@@ -2486,7 +2488,7 @@
     ]
   },
   "time": {
-    "from": "now-5m",
+    "from": "now-12h",
     "to": "now"
   },
   "timepicker": {
@@ -2521,5 +2523,5 @@
   "variables": {
     "list": []
   },
-  "version": 4
+  "version": 5
 }
